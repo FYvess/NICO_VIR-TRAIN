@@ -1,22 +1,17 @@
 # NICO_VIR-TRAIN
-Company Virtual Training Web Application
+# Company Virtual Training Web Application
 
-Overview
-
+## Overview
 This is a simple web-based virtual training application for company testers. Users can select a tester type (PM, CAL, GAGE) and navigate to isolation and installation training pages.
 
-Features
+## Features
+- Multiple-page structure for better organization
+- Simple and clean UI with HTML, CSS, and JavaScript
+- Navigation for Isolation and Installation pages
+- Lightweight and easy to run locally
 
-Multiple-page structure for better organization
-
-Simple and clean UI with HTML, CSS, and JavaScript
-
-Navigation for Isolation and Installation pages
-
-Lightweight and easy to run locally
-
-File Structure
-
+## File Structure
+```
 README.md
 ANALOG_VIRTRAIN
   | -- assets
@@ -31,48 +26,40 @@ ANALOG_VIRTRAIN
       │── isolation.html     # Isolation selection page
       │── installation.html  # Installation selection page
   | -- index.html
+```
 
-How to Run Locally in VS Code
+## How to Run Locally in VS Code
 
-Prerequisites
+### Prerequisites
+- Install [Visual Studio Code](https://code.visualstudio.com/)
+- Recommended: Install the **Live Server** extension in VS Code for easier local preview
 
-Install Visual Studio Code
+### Steps to Run
+1. **Clone or Download the Project:**
+   - If using Git:  
+     ```sh
+     git clone https://github.com/your-repo/company-training.git
+     cd company-training
+     ```
+   - Or manually download the files and extract them into a folder.
 
-Recommended: Install the Live Server extension in VS Code for easier local preview
+2. **Open the Folder in VS Code:**
+   - Open VS Code and go to **File → Open Folder**
+   - Select the project folder
 
-Steps to Run
+3. **Run with Live Server:**
+   - Install the **Live Server** extension (if not installed yet)
+   - Right-click on `index.html` → Click **Open with Live Server**
+   - This will open the website in your default web browser.
 
-Clone or Download the Project:
+4. **Run Manually (Without Live Server):**
+   - Open `index.html` manually in your browser by double-clicking it.
 
-If using Git:
+## Future Improvements
+- Adding Firebase for data management
+- Implementing React for a more dynamic UI
+- Expanding backend with Node.js if needed
 
-git clone https://github.com/your-repo/company-training.git
-cd company-training
+---
+For any questions or improvements, feel free to contribute! 🚀
 
-Or manually download the files and extract them into a folder.
-
-Open the Folder in VS Code:
-
-Open VS Code and go to File → Open Folder
-
-Select the project folder
-
-Run with Live Server:
-
-Install the Live Server extension (if not installed yet)
-
-Right-click on index.html → Click Open with Live Server
-
-This will open the website in your default web browser.
-
-Run Manually (Without Live Server):
-
-Open index.html manually in your browser by double-clicking it.
-
-Future Improvements
-
-Adding Firebase for data management
-
-Implementing React for a more dynamic UI
-
-Expanding backend with Node.js if needed
