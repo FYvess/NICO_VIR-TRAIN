@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation | Virtual Training App</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Installation Training</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="breadcrumb">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li>Installation Training</li>
+                </ul>
+            </section>
+            
+            <section class="training-content">
+                <h2>Select Installation Type</h2>
+                
+                <div class="installation-options">
+                    <div class="option-card" id="applicationInstall">
+                        <div class="option-icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                                <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                                <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3>Application Installation</h3>
+                        <p>New system installation procedures</p>
+                        <div class="installation-steps">
+                            <div class="step-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%"></div>
+                                </div>
+                                <div class="progress-labels">
+                                    <span>Start</span>
+                                    <span>Complete</span>
+                                </div>
+                            </div>
+                            
+                            <div class="step-content">
+                                <div class="step-item active" data-step="1">
+                                    <h4>Step 1: Site Preparation</h4>
+                                    <p>Ensure the installation site meets all requirements.</p>
+                                    <ul>
+                                        <li>Verify power specifications</li>
+                                        <li>Check environmental conditions</li>
+                                        <li>Confirm space requirements</li>
+                                    </ul>
+                                    <button class="btn next-step">Next Step</button>
+                                </div>
+                                
+                                <div class="step-item" data-step="2">
+                                    <h4>Step 2: Hardware Installation</h4>
+                                    <p>Install and secure all hardware components.</p>
+                                    <ul>
+                                        <li>Unpack and inspect components</li>
+                                        <li>Mount main unit</li>
+                                        <li>Connect peripheral devices</li>
+                                    </ul>
+                                    <button class="btn prev-step">Previous</button>
+                                    <button class="btn next-step">Next Step</button>
+                                </div>
+                                
+                                <div class="step-item" data-step="3">
+                                    <h4>Step 3: Software Configuration</h4>
+                                    <p>Install and configure all required software.</p>
+                                    <ul>
+                                        <li>Install operating system</li>
+                                        <li>Install application software</li>
+                                        <li>Configure system parameters</li>
+                                    </ul>
+                                    <button class="btn prev-step">Previous</button>
+                                    <button class="btn next-step">Next Step</button>
+                                </div>
+                                
+                                <div class="step-item" data-step="4">
+                                    <h4>Step 4: System Verification</h4>
+                                    <p>Verify all components are functioning correctly.</p>
+                                    <ul>
+                                        <li>Run diagnostic tests</li>
+                                        <li>Verify communication interfaces</li>
+                                        <li>Test all functions</li>
+                                    </ul>
+                                    <button class="btn prev-step">Previous</button>
+                                    <button class="btn complete-installation">Complete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="option-card" id="reinstallation">
+                        <div class="option-icon">
+                            <br>
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.5 2v6h-6"></path>
+                                <path d="M2.5 12V6h6"></path>
+                                <path d="M2.5 12a10 10 0 0 0 10 10c4.8 0 8.7-3.4 9.8-8"></path>
+                                <path d="M21.5 8a10 10 0 0 0-10-10c-4.8 0-8.7 3.4-9.8 8"></path>
+                            </svg>
+                        </div>
+                        <h3>Reinstallation</h3>
+                        <p>Procedures for reinstalling existing systems</p>
+                        <button class="btn view-reinstall">View Reinstallation Guide</button>
+                        <div class="reinstall-guide" style="display: none;">
+                            <h4>Reinstallation Procedure</h4>
+                            <ol>
+                                <li>Backup existing configuration and data</li>
+                                <li>Document current settings</li>
+                                <li>Remove existing components</li>
+                                <li>Install new components</li>
+                                <li>Restore configuration and data</li>
+                                <li>Verify system operation</li>
+                            </ol>
+                            <div class="warning-box">
+                                <h5>Important Note</h5>
+                                <p>Always ensure all data is backed up before beginning the reinstallation process. Failure to do so may result in permanent data loss.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Virtual Training App. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>
+

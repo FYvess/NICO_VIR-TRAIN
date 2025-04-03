@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAL Training | Virtual Training App</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CAL Training</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="breadcrumb">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li>CAL Training</li>
+                </ul>
+            </section>
+            
+            <section class="training-content">
+                <h2>Calibration Diagnostics</h2>
+                
+                <div class="diagnostic-tool">
+                    <div class="tool-header">
+                        <h3>Calibration Sequence</h3>
+                        <div class="tool-controls">
+                            <button id="startDiagnostic" class="btn">Start Diagnostic</button>
+                            <button id="resetDiagnostic" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </div>
+                    
+                    <div class="diagnostic-display">
+                        <div class="display-screen">
+                            <div id="diagnosticOutput">
+                                System ready for calibration diagnostic...
+                            </div>
+                        </div>
+                        
+                        <div class="diagnostic-steps">
+                            <div class="step" data-step="1">
+                                <span class="step-number">1</span>
+                                <span class="step-name">Initialize System</span>
+                                <span class="step-status">Pending</span>
+                            </div>
+                            <div class="step" data-step="2">
+                                <span class="step-number">2</span>
+                                <span class="step-name">Zero Reference</span>
+                                <span class="step-status">Pending</span>
+                            </div>
+                            <div class="step" data-step="3">
+                                <span class="step-number">3</span>
+                                <span class="step-name">Standard Measurement</span>
+                                <span class="step-status">Pending</span>
+                            </div>
+                            <div class="step" data-step="4">
+                                <span class="step-number">4</span>
+                                <span class="step-name">Calibration Adjustment</span>
+                                <span class="step-status">Pending</span>
+                            </div>
+                            <div class="step" data-step="5">
+                                <span class="step-number">5</span>
+                                <span class="step-name">Verification</span>
+                                <span class="step-status">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="isolation.html" class="btn">Proceed to Isolation</a>
+                    <a href="installation.html" class="btn">Skip to Installation</a>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Virtual Training App. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>

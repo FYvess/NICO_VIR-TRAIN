@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAGE Training | Virtual Training App</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Additional styles specific to the gage page */
+        .gage-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .gage-header h1 {
+            margin-bottom: 0;
+        }
+        
+        .gage-header-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .gage-header-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .page-divider {
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 1rem 0 2rem 0;
+        }
+        
+        .gage-image {
+            position: relative;
+            margin-bottom: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            min-height: auto;
+        }
+        
+        .gage-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            opacity: 0.7;
+        }
+        
+        .hotspot {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        
+        .hotspot::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background-color: rgba(58, 134, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .hotspot::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .hotspot:hover::before, .hotspot.active::before {
+            background-color: rgba(58, 134, 255, 0.3);
+            width: 40px;
+            height: 40px;
+        }
+        
+        .hotspot.active::after {
+            background-color: var(--primary-color);
+        }
+        
+        .components-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .components-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .component-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            min-width: 150px;
+        }
+        
+        .component-item:hover {
+            background-color: rgba(58, 134, 255, 0.1);
+        }
+        
+        .component-item.active {
+            background-color: rgba(58, 134, 255, 0.15);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .component-indicator {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        
+        .component-indicator::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            background-color: rgba(58, 134, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .component-indicator::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .component-item:hover .component-indicator::before {
+            background-color: rgba(58, 134, 255, 0.3);
+        }
+        
+        .component-info {
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .component-info h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .component-info p {
+            margin-bottom: 0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .components-list {
+                flex-direction: column;
+            }
+            
+            .component-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gage-header">
+            <h1>GAGE Training</h1>
+            <div class="gage-header-nav">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+        
+        <div class="page-divider"></div>
+        
+        <div class="breadcrumb">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li>GAGE Training</li>
+            </ul>
+        </div>
+        
+        <div class="training-content">
+            <h2>Gage Breakdown</h2>
+            
+            <div class="components-section">
+                <h3>Components</h3>
+                <ul class="components-list">
+                    <li class="component-item" data-part="dial">
+                        <div class="component-indicator"></div>
+                        Dial Indicator
+                    </li>
+                    <li class="component-item" data-part="spindle">
+                        <div class="component-indicator"></div>
+                        Spindle
+                    </li>
+                    <li class="component-item" data-part="base">
+                        <div class="component-indicator"></div>
+                        Base
+                    </li>
+                    <li class="component-item" data-part="anvil">
+                        <div class="component-indicator"></div>
+                        Anvil
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="component-info">
+                <h3 id="partTitle">Select a component</h3>
+                <div class="component-images">
+                <img src="/images/dial.jpg" alt="Dial Indicator" class="component-image" id="image-dial" style="display: none;">
+                <img src="/images/spindle.jpg" alt="Spindle" class="component-image" id="image-spindle" style="display: none;">
+                <img src="/images/base.jpg" alt="Base" class="component-image" id="image-base" style="display: none;">
+                <img src="/images/anvil.jpg" alt="Anvil" class="component-image" id="image-anvil" style="display: none;">
+            </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const componentImages = document.querySelectorAll('.component-image');
+                    
+                    function updateComponentImage(part) {
+                        componentImages.forEach(img => img.style.display = 'none');
+                        const selectedImage = document.getElementById(`image-${part}`);
+                        if (selectedImage) {
+                            selectedImage.style.display = 'block';
+                        }
+                    }
+                    
+                    const hotspots = document.querySelectorAll('.hotspot');
+                    const componentItems = document.querySelectorAll('.component-item');
+                    
+                    hotspots.forEach(hotspot => {
+                        hotspot.addEventListener('click', function() {
+                            const part = this.getAttribute('data-part');
+                            updateComponentImage(part);
+                        });
+                    });
+                    
+                    componentItems.forEach(item => {
+                        item.addEventListener('click', function() {
+                            const part = this.getAttribute('data-part');
+                            updateComponentImage(part);
+                        });
+                    });
+                    
+                    // Set the anvil image as active by default
+                    updateComponentImage('anvil');
+                });
+            </script>
+                <p id="partDescription">Click on a component above or on the diagram to learn more about it.</p>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="isolation.html" class="btn">Proceed to Isolation</a>
+                <a href="installation.html" class="btn">Skip to Installation</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Virtual Training App. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hotspots = document.querySelectorAll('.hotspot');
+            const componentItems = document.querySelectorAll('.component-item');
+            const partTitle = document.getElementById('partTitle');
+            const partDescription = document.getElementById('partDescription');
+            
+            const partDetails = {
+                'dial': {
+                    title: 'Dial Indicator',
+                    description: 'The dial indicator displays measurement readings. It consists of a graduated dial face and a pointer that moves in response to the spindle movement.'
+                },
+                'spindle': {
+                    title: 'Spindle',
+                    description: 'The spindle is the moving part that contacts the workpiece. Its movement is translated into the dial reading.'
+                },
+                'base': {
+                    title: 'Base',
+                    description: 'The base provides stability and a reference surface for measurements. It may include mounting options for different applications.'
+                },
+                'anvil': {
+                    title: 'Anvil',
+                    description: 'The anvil provides a reference surface opposite to the spindle. The workpiece is measured between the anvil and spindle.'
+                }
+            };
+            
+            function updatePartInfo(part) {
+                if (partTitle && partDescription && partDetails[part]) {
+                    // Clear all active states first
+                    hotspots.forEach(h => h.classList.remove('active'));
+                    componentItems.forEach(p => p.classList.remove('active'));
+                    
+                    // Set active state for the selected part
+                    document.querySelectorAll(`[data-part="${part}"]`).forEach(el => {
+                        el.classList.add('active');
+                    });
+                    
+                    // Update the info panel with animation
+                    partTitle.style.opacity = 0;
+                    partDescription.style.opacity = 0;
+                    
+                    setTimeout(() => {
+                        partTitle.textContent = partDetails[part].title;
+                        partDescription.textContent = partDetails[part].description;
+                        partTitle.style.opacity = 1;
+                        partDescription.style.opacity = 1;
+                    }, 200);
+                }
+            }
+            
+            hotspots.forEach(hotspot => {
+                hotspot.addEventListener('click', function() {
+                    const part = this.getAttribute('data-part');
+                    updatePartInfo(part);
+                });
+            });
+            
+            componentItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const part = this.getAttribute('data-part');
+                    updatePartInfo(part);
+                });
+            });
+            
+            // Set the anvil as active by default
+            updatePartInfo('anvil');
+        });
+    </script>
+</body>
+</html>
+

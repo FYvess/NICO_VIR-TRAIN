@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Training App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Virtual Training App</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="hero">
+                <h2>Welcome to Virtual Training</h2>
+                <p>Select a tester type to begin your training</p>
+            </section>
+            
+            <section class="tester-selection">
+                <div class="tester-card" data-type="pm">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>PM</h3>
+                            <p>Preventive Maintenance</p>
+                        </div>
+                        <div class="card-back">
+                            <p>PM Breakdown Checklist</p>
+                            <a href="pages/pm.html" class="btn">Start Training</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tester-card" data-type="cal">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>CAL</h3>
+                            <p>Calibration</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Calibration Diagnostics</p>
+                            <a href="pages/cal.html" class="btn">Start Training</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tester-card" data-type="gage">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>GAGE</h3>
+                            <p>Measurement Tools</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Gage Breakdown</p>
+                            <a href="pages/gage.html" class="btn">Start Training</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Virtual Training App. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
