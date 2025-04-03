@@ -1,5 +1,5 @@
 # NICO_VIR-TRAIN
-# Company Virtual Training Web Application
+# Virtual Training Web Application
 
 ## Overview
 This is a simple web-based virtual training application for company testers. Users can select a tester type (PM, CAL, GAGE) and navigate to isolation and installation training pages.
